@@ -11,6 +11,28 @@
             <Button x:Name="btnCreateNewContact"
                     Content="Create New Contact"
                     Click="btnCreateNewContact_Click"/>
+            <TextBox x:Name="txbSearch"
+                     Margin="10"
+                     TextChanged="txbSearch_TextChanged"/>
+            <ListView x:Name="lvContacts"
+                      Margin="0 5 0 0"
+                      Height="270">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}"
+                                       FontSize="20"
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Email}"
+                                       FontSize="14"
+                                       Foreground="DodgerBlue"/>
+                            <TextBlock Text="{Binding Phone}"
+                                       FontSize="14"
+                                       FontStyle="Italic"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </Grid>
 </Window>
