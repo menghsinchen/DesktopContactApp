@@ -12,7 +12,7 @@
                     Content="Create New Contact"
                     Click="btnCreateNewContact_Click"/>
             <TextBox x:Name="txbSearch"
-                     Margin="10"
+                     Margin="0 5 0 0"
                      TextChanged="txbSearch_TextChanged"/>
             <ListView x:Name="lvContacts"
                       Margin="0 5 0 0"
