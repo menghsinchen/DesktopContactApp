@@ -38,15 +38,30 @@ namespace DesktopContactApp
             FilterContacts();
         }
 
+        private void lvContacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
+        private void lvContacts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Contact? selectedContact = lvContacts.SelectedItem as Contact;
+            if (selectedContact != null)
+            {
+                ContactDetailsWindow window = new ContactDetailsWindow(selectedContact);
+                window.ShowDialog();
+                RefreshContacts();
+            }
+        }
+
         private void RefreshContacts()
         {
-            allContacts = SQLiteHelper.ReadContact().OrderBy(x => x.Name).ToList();
+            allContacts = SQLiteHelper.ReadContact().OrderBy(o => o.Name).ToList();
             lvContacts.ItemsSource = allContacts;
         }
 
         private void FilterContacts()
         {
-            List<Contact> filteredContacts = allContacts.Where(x => x.Name.Contains(txbSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+            List<Contact> filteredContacts = allContacts.Where(w => w.Name.Contains(txbSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
             lvContacts.ItemsSource = filteredContacts;
         }
     }

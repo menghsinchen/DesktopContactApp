@@ -16,7 +16,9 @@
                      TextChanged="txbSearch_TextChanged"/>
             <ListView x:Name="lvContacts"
                       Margin="0 5 0 0"
-                      Height="270">
+                      Height="270"
+                      SelectionChanged="lvContacts_SelectionChanged"
+                      MouseDoubleClick="lvContacts_MouseDoubleClick">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>

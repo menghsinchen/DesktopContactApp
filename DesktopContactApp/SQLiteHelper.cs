@@ -34,5 +34,23 @@ namespace DesktopContactApp
                 connection.Insert(contact);
             }
         }
+
+        public static void UpdateContact(Contact contact)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_databasePath))
+            {
+                connection.CreateTable<Contact>();
+                connection.Update(contact);
+            }
+        }
+
+        public static void DeleteContact(Contact contact)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(_databasePath))
+            {
+                connection.CreateTable<Contact>();
+                connection.Delete(contact);
+            }
+        }
     }
 }

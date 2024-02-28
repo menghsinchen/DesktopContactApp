@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesktopContactApp.Classes
 {
-    internal class Contact
+    public class Contact
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
