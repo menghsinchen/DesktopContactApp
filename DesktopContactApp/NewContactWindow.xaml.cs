@@ -24,6 +24,10 @@ namespace DesktopContactApp
         public NewContactWindow()
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            WindowStyle = WindowStyle.None;
+            ResizeMode = ResizeMode.NoResize;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -36,6 +40,11 @@ namespace DesktopContactApp
             };
 
             SQLiteHelper.InsertContact(contact);
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }

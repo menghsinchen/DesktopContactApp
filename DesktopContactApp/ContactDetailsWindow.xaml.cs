@@ -25,6 +25,10 @@ namespace DesktopContactApp
         public ContactDetailsWindow(Contact contact)
         {
             InitializeComponent();
+            Owner = App.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            WindowStyle = WindowStyle.None;
+            ResizeMode = ResizeMode.NoResize;
 
             this.contact = contact;
             txbName.Text = contact.Name;
@@ -45,6 +49,11 @@ namespace DesktopContactApp
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             SQLiteHelper.DeleteContact(contact);
+            Close();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
             Close();
         }
     }

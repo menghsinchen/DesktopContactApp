@@ -8,15 +8,24 @@
         Title="NewContactWindow" Height="300" Width="300">
     <Grid>
         <StackPanel Margin="10">
+            <TextBlock Text="Name"/>
             <TextBox x:Name="txbName"
-                     Margin="0,0,0,5"/>
+                     Margin="0,0,0,10"/>
+            <TextBlock Text="Email"/>
             <TextBox x:Name="txbEmail"
-                     Margin="0,0,0,5"/>
+                     Margin="0,0,0,10"/>
+            <TextBlock Text="Phone"/>
             <TextBox x:Name="txbPhone"
-                     Margin="0,0,0,5"/>
+                     Margin="0,0,0,10"/>
             <Button x:Name="btnSave"
+                    Margin="0,0,0,5"
+                    Foreground="White"
+                    Background="DarkSlateBlue"
                     Content="Save"
                     Click="btnSave_Click"/>
+            <Button x:Name="btnCancel"
+                    Content="Cancel"
+                    Click="btnCancel_Click"/>
         </StackPanel>
     </Grid>
 </Window>

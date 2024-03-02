@@ -23,6 +23,9 @@ namespace DesktopContactApp
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            ResizeMode = ResizeMode.CanMinimize;
+
             RefreshContacts();
         }
 
